@@ -256,7 +256,7 @@ body {
   display: inline-block;
 }
 .services-list div:hover{
-    background-color: #28577e;
+    background: linear-gradient(rgba(0,0,0,0.5), #ff004f);
     transform: scale(1.03);
 }
 /* -----------My work---------- */
