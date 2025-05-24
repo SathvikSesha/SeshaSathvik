@@ -19,6 +19,14 @@ body {
     z-index: 1000;
 }
 
+.lazy-section {
+    opacity: 0; /* Initially hide sections */
+    transition: opacity 2s ease; /* Smooth transition for opacity */
+}
+.lazy-section.loaded {
+    opacity: 1; /* Show section when loaded */
+}
+
 .container {
     height: 50px;
     width: 100%;

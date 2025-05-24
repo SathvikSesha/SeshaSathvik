@@ -50,6 +50,21 @@ function changeActiveLink() {
   });
 }
 
+const lazySections = document.querySelectorAll(".lazy-section");
+const sectionObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const section = entry.target;
+      section.classList.add("loaded"); // Add a class to indicate the section is loaded
+      observer.unobserve(section); // Stop observing the section
+    }
+  });
+});
+// Observe each lazy section
+lazySections.forEach((section) => {
+  sectionObserver.observe(section);
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   animateName();
   changeActiveLink();
