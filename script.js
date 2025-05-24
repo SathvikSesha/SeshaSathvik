@@ -1,6 +1,11 @@
 const tabLinks = document.querySelectorAll(".tab-links");
 const tabContents = document.querySelectorAll(".tab-contents");
 const nam = document.querySelector("#name");
+const play = document.querySelector(".play");
+play.addEventListener("click", () => {
+  window.location.href =
+    "https://sathviksesha.github.io/Projects/rock-Paper-Scissors/";
+});
 
 tabLinks.forEach((link, index) => {
   link.addEventListener("click", () => {
