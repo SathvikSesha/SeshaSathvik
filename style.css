@@ -545,7 +545,7 @@ body {
         flex-basis: 60%;
     }
     .about-col-2 p{
-        font-size: 12px;
+        font-size: 9px !important;
     }
     .sub {
         font-size: 28px;
@@ -594,7 +594,7 @@ body {
         margin-bottom: 14px;
     }
     .services-list div h2 {
-        font-size: 20px;
+        font-size: 16px;
     }
     .services-list div a {
         font-size: 9px;
@@ -626,6 +626,9 @@ body {
     }
     .work:hover img {
         transform: scale(1.02);
+    }
+    .mywork .btn{
+        font-size: 12px;
     }
     .work:hover .layer {
         height: 100%;
@@ -666,11 +669,11 @@ body {
     .contact-left p {
         margin: 10px 0;
         color: #ccc;
-        font-size: 10px;
+        font-size: 8px;
     }
     .contact-left .sub-title {
-        font-size: 25px !important;
-        margin-bottom: 15px;
+        font-size: 20px !important;
+        margin-bottom: 10px;
     }
     .social-icons a {
         font-size: 18px;
