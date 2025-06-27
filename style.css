@@ -9,6 +9,7 @@ html{
     scroll-behavior: smooth;
 }
 body {
+    cursor: none;
     background-color: black;
     color: white;
     padding-top: 75px;
