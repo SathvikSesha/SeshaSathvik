@@ -30,6 +30,7 @@ body {
   width: 10px;
   height: 10px;
   background-color: #00ffcc;
+  box-shadow: 0px 0px 10px 3px white;
 }
 
 .trail-dot {
@@ -38,6 +39,7 @@ body {
   background-color: #00ffcc;
   opacity: 0.2;
   transition: width 0.3s, height 0.3s;
+  box-shadow: 0px 0px 5px 1px white;
 }
 
 #header {
