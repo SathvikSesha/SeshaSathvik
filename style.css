@@ -297,15 +297,13 @@ body {
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: #ffffff; /* white by default */
+    color: #ffffff !important; /* force white */
+    background: none !important; /* remove gradient background */
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
     transition: all 0.3s ease-in-out;
 }
-
-.services-list div:hover h2 {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 0, 79, 0.7);
-}
-
 
 
 .services-list div a {
