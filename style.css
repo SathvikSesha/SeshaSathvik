@@ -698,7 +698,10 @@ body {
         flex-basis: 55%;
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 0 3px 6px rgba(255, 254, 254, 0.9);
+        box-shadow: 
+    0 0 15px rgba(255, 0, 79, 0.6),
+    0 0 30px rgba(106, 17, 203, 0.5);
+
     }
     .contact-right {
         flex-basis: 45%;
