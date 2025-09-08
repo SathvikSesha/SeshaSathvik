@@ -281,25 +281,34 @@ body {
 }
 
 .services-list div {
-    background-color: #262626;
+    background-color: #262626; /* keep as base */
     padding: 30px;
     font-size: 13px;
     font-weight: 400;
-    border-radius: 10px;
-    transition: all 0.5s;
+    border-radius: 15px;  /* make corners slightly smoother */
+    transition: all 0.4s ease-in-out;
 }
 .services-list div i {
     font-size: 40px;
     margin-bottom: 20px;
+    color: #00fff0; /* cyan accent */
 }
 .services-list div h2 {
-    color: transparent;
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 10px;
-    background-image: linear-gradient(to right, rgb(159, 254, 164), rgb(248, 245, 245), rgba(237, 75, 75, 0.5));
-    background-clip: text;
+    color: #ffffff; /* default white */
+    transition: all 0.3s ease-in-out;
 }
+
+.services-list div:hover h2 {
+    background: linear-gradient(135deg, #ff004f, #6a11cb);
+    background-clip: text;             /* Standard */
+    -webkit-background-clip: text;     /* WebKit */
+    color: transparent;                /* Standard fallback */
+    -webkit-text-fill-color: transparent; /* WebKit */
+}
+
 .services-list div a {
     text-decoration: none;
     color: #d7d6fe;
@@ -308,7 +317,7 @@ body {
     display: inline-block;
 }
 .services-list div:hover {
-    background: linear-gradient(rgba(0,0,0,0.5), #ff004f);
+    background: linear-gradient(135deg, #ff004f, #6a11cb); /* clean neon gradient */
     transform: scale(1.03);
 }
 
