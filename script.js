@@ -84,45 +84,38 @@ window.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("scroll", changeActiveLink);
 
-const cursorDot = document.querySelector(".cursor-dot");
-const trailDots = document.querySelectorAll(".trail-dot");
-const cursorOutline = document.querySelector(".cursor-outline");
+if (window.matchMedia("(pointer: fine)").matches) {
+  const cursorDot = document.querySelector(".cursor-dot");
+  const trailDots = document.querySelectorAll(".trail-dot");
+  const cursorOutline = document.querySelector(".cursor-outline");
 
-let mouseX = 0,
-  mouseY = 0;
-const dotPositions = Array(trailDots.length)
-  .fill()
-  .map(() => ({ x: 0, y: 0 }));
-let outlineX = 0,
-  outlineY = 0;
+  let mouseX = 0, mouseY = 0;
+  const dotPositions = Array(trailDots.length).fill().map(() => ({ x: 0, y: 0 }));
+  let outlineX = 0, outlineY = 0;
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-function animate() {
-  // Main dot follows instantly
-  cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-
-  // Trail dots follow each other
-  dotPositions.forEach((pos, i) => {
-    const target = i === 0 ? { x: mouseX, y: mouseY } : dotPositions[i - 1];
-    pos.x += (target.x - pos.x) * 0.2;
-    pos.y += (target.y - pos.y) * 0.2;
-    trailDots[i].style.transform = `translate(${pos.x}px, ${pos.y}px)`;
-    trailDots[i].style.opacity = `${1 - i * 0.08}`;
-    trailDots[i].style.width = `${10 - i}px`;
-    trailDots[i].style.height = `${10 - i}px`;
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
   });
 
-  // Outline follows very slowly
-  outlineX += (mouseX - outlineX) * 0.08;
-  outlineY += (mouseY - outlineY) * 0.08;
-  cursorOutline.style.transform = `translate(${outlineX - 20}px, ${
-    outlineY - 20
-  }px)`; // -20 to center
+  function animate() {
+    cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 
-  requestAnimationFrame(animate);
+    dotPositions.forEach((pos, i) => {
+      const target = i === 0 ? { x: mouseX, y: mouseY } : dotPositions[i - 1];
+      pos.x += (target.x - pos.x) * 0.2;
+      pos.y += (target.y - pos.y) * 0.2;
+      trailDots[i].style.transform = `translate(${pos.x}px, ${pos.y}px)`;
+      trailDots[i].style.opacity = `${1 - i * 0.08}`;
+      trailDots[i].style.width = `${10 - i}px`;
+      trailDots[i].style.height = `${10 - i}px`;
+    });
+
+    outlineX += (mouseX - outlineX) * 0.08;
+    outlineY += (mouseY - outlineY) * 0.08;
+    cursorOutline.style.transform = `translate(${outlineX - 20}px, ${outlineY - 20}px)`;
+
+    requestAnimationFrame(animate);
+  }
+  animate();
 }
-animate();

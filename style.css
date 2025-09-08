@@ -733,3 +733,11 @@ body {
 .hamburger {
     display: none;
 }
+/* Disable cursor dots on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot,
+  .trail-dot,
+  .cursor-outline {
+    display: none !important;
+  }
+}
